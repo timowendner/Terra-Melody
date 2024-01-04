@@ -14,4 +14,4 @@ hidden size: 100
 
 # use the debug size for only loading 20 files instead of the
 # whole dataset. (comment out if using the whole dataset)
-# debug size: 20
+debug size: 20
