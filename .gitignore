@@ -1,0 +1,12 @@
+testing.ipynb
+
+__pycache__/*
+*.pyc
+
+*.DS_Store
+
+*egg-info
+egg-info/*
+
+testset/*
+trainset/*
