@@ -9,7 +9,7 @@ from torch.optim import Optimizer
 
 
 from .dataloader import MIDIDataset
-from .utils import CombinedLoss
+from .utils import CombinedLoss, get_midi
 
 
 def train_network(
@@ -51,12 +51,14 @@ def train_network(
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
 
         lr = optimizer.param_groups[0]['lr']
         error = test_network(
             model, test_set, desc='      Testing Network'
         )
         print(f'      current error: {error:.4f}, lr: {lr}\n')
+        get_midi(model, 10)
     return model, optimizer
 
 
