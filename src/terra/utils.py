@@ -3,10 +3,10 @@ from mido import MidiFile
 from torch import nn
 
 
-def get_midi(model: nn.Module, length: int):
-    return
+def get_midi(model: nn.Module, length: int, config: dict):
     model.eval()
     sequence = torch.zeros((1, length+1, 6)).float()
+    sequence.to(config['device'])
 
     for i in range(1, length+1):
         x = sequence[:, :i, :]
@@ -14,6 +14,7 @@ def get_midi(model: nn.Module, length: int):
             output = model(x, [i])
 
         sequence[:, i, :] = output[:, -1]
+    return sequence.cpu()
 
     # midi_stream = stream.Stream()
     # for note_index in sequence:
