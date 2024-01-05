@@ -58,7 +58,7 @@ def train_network(
             model, test_set, desc='      Testing Network'
         )
         print(f'      current error: {error:.4f}, lr: {lr}\n')
-        get_midi(model, 10)
+        get_midi(model, 5, config)
     return model, optimizer
 
 
