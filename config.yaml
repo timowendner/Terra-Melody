@@ -9,7 +9,6 @@ batch size: 5
 Dropout: 0.25
 
 
-bidirectional: False
 hidden sizes: [100, 100, 100]
 embedding size: 100
 

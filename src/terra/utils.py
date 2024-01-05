@@ -4,6 +4,7 @@ from torch import nn
 
 
 def get_midi(model: nn.Module, length: int):
+    return
     model.eval()
     sequence = torch.zeros((1, length+1, 6)).float()
 
