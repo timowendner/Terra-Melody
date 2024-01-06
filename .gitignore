@@ -10,3 +10,6 @@ egg-info/*
 
 testset/*
 trainset/*
+
+models/*
+test.mid
